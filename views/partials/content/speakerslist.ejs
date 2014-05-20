@@ -7,7 +7,14 @@
             <a href="/speakers/<%= item.shortname %>">
             <%= item.name %></a><span></h3>
             <p><a href="/speakers/<%= item.shortname %>">
-              <img class="speaker" src="/images/speakers/<%= item.shortname %>_tn.jpg" alt="Photo of <%= item.name %>">
+              <img class="speaker" src="/images/speakers/<%= item.shortname %>_tn.jpg" alt="Photo of <%= item.name %>"></a>
+              <% if (page!= 'home') { %>
+                <% if (page === 'artistList') { %>
+                  <%- item.summary %>
+                <% } else { %>
+                  <%- item.description %>
+                <% } %>
+              <% } %>
             </a></p>
         </article>
       <% }); %>
